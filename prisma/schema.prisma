@@ -1,0 +1,108 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model Admin {
+  id             String    @id @default(auto()) @map("_id") @db.ObjectId
+  name           String
+  password            String
+}
+
+model Infor {
+  id             String    @id @default(auto()) @map("_id") @db.ObjectId
+  title           String
+  icon            String
+}
+
+model Navbar {
+  id             String    @id @default(auto()) @map("_id") @db.ObjectId
+  label            String
+  icon            Boolean
+  path            String
+}
+
+model Slide {
+  id             String    @id @default(auto()) @map("_id") @db.ObjectId
+  text            String
+  textsub         String
+  image           String
+}
+
+model Subtraction {
+  id             String    @id @default(auto()) @map("_id") @db.ObjectId
+  order             Int
+  label           String
+  background      String
+}
+
+model Image {
+  id             String    @id @default(auto()) @map("_id") @db.ObjectId
+  src   String
+}
+
+model Social {
+  id             String    @id @default(auto()) @map("_id") @db.ObjectId
+  icon            String
+  color           String
+}
+
+model RectAngle {
+  id             String    @id @default(auto()) @map("_id") @db.ObjectId
+  iconsize        Int
+  icon            String
+  direction       String?
+  border          String?
+  text            String
+  label         String
+  count           Int
+}
+
+model CopyRight {
+  id             String    @id @default(auto()) @map("_id") @db.ObjectId
+  text            String
+}
+
+model FanPage {
+  id             String    @id @default(auto()) @map("_id") @db.ObjectId
+  src            String
+}
+
+model Course {
+  id             String    @id @default(auto()) @map("_id") @db.ObjectId
+  text            String
+}
+
+model duhoc {
+  id             String    @id @default(auto()) @map("_id") @db.ObjectId
+  text            String
+}
+
+model Studen {
+  id             String    @id @default(auto()) @map("_id") @db.ObjectId
+  name          String
+  name2          String
+  image           String
+  image2           String
+  subtext       String
+  text2       String
+  text          String
+}
+
+model Logo {
+  id             String    @id @default(auto()) @map("_id") @db.ObjectId
+  src            String
+}
+
+model LogoPage {
+  id             String    @id @default(auto()) @map("_id") @db.ObjectId
+  src            String
+}
+
